@@ -10,7 +10,7 @@ main()
     {
         printf("================================");
         printf("\nNama karyawan : "); scanf("%s",&nama);
-        printf("Lama bekerja (tahun): "); scanf("%d",&lb);
+        printf("Lama bekerja (tahun) : "); scanf("%d",&lb);
         printf("Status perkawinan (0, jika belum  menikah. 1, jika sudah menikah : ");
         scanf("%d",&sm);
         printf("Pinjaman : ");
