@@ -17,6 +17,6 @@ main()
     printf("\nNilai suhu adalah %d derajat Fahrenheit",fahrenheit);
     printf("\nNilai suhu adalah %.2f derajat Reamur",reamur);
     
-    getch();
+    getch(); 
     return 0;
 }
