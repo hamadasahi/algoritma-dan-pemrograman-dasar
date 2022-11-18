@@ -1,1 +1,1 @@
-# algoritma-dan-permrograman-dasar
+## algoritma-dan-pemrograman-dasar
