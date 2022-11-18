@@ -18,6 +18,6 @@ main()
     printf("\nLuas persegi panjang = %d",luas);
     printf("\nKeliling persegi panjang = %d",keliling);
 
-    getch();
+    getch(); 
     return 0;
 }
