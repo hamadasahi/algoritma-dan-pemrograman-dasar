@@ -8,7 +8,7 @@ main()
 
     system("cls");
     printf("Konversi suhu");
-    printf("\n\nMasukkan suhu dalam satuan celcius : ");
+    printf("\nMasukkan suhu dalam satuan celcius : ");
     scanf("%d",&celcius);
     
     fahrenheit=celcius+273;
