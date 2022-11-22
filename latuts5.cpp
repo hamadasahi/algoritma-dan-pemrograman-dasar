@@ -1,26 +1,28 @@
-#include <stdio.h>
-#include <conio.h>
+#include<stdio.h>
 #include <stdlib.h>
-main()
+#include <conio.h>
+
+int main()
 {
-    int masuk,keluar,lama;
+    // input
+    int jam_masuk, jam_keluar, lama;
 
     system("cls");
-    printf("Menghitung lama bekerja pegawai");
-    printf("\n\nJam masuk : ");
-    scanf("%d",&masuk);
-    printf("Jam keluar : ");
-    scanf("%d",&keluar);
 
-    if(masuk>=1 && masuk<=12 && keluar>=1 && keluar<=12)
-    {
+    // input
+    printf("jam masuk: "); scanf("%d", &jam_masuk);
+    printf("jam keluar: "); scanf("%d", &jam_keluar);
 
+    // proses
+    if(jam_keluar >= jam_masuk){
+        lama = jam_keluar - jam_masuk;
     }else{
-        printf("Tolong masukkan angka yang sesuai.")
+        lama = (12-jam_masuk) + jam_keluar;
     }
 
-    printf("\nLama bekerja = %d",lama);
-    
+    // output
+    printf("\nLama bekerja adalah %d Jam", lama);
+
     getch();
     return 0;
 }
