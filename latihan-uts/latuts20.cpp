@@ -36,4 +36,7 @@ main()
         printf("=%d",jml);
         printf("\n");
     }
+    
+    getch();
+    return 0;
 }
