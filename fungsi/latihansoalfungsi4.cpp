@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 //program rental mobil
-int jenis,hari,harga; char ulang;
+int jenis,hari; char ulang;
 void fungsimenu(void);
 int hitungharga(int j, int h);
 main(){
@@ -28,6 +28,7 @@ void fungsimenu(void){
 }
 
 int hitungharga(int j, int h){
+    int harga;
     switch (j)
     {
         case 1 : harga = 300000; break;
