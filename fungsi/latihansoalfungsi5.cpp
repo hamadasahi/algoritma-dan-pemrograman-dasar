@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-//program jumlah 3 bilangan
+//program jumlah bilangan
 int bil1,bil2;
 int fungsijumlah(int a, int b);
 main(){
