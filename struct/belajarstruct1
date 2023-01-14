@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+//struct mahasiswa
+struct mahasiswa{
+	char nama[100];
+	int nim;
+};
+struct mahasiswa mhs;
+//struct dosen
+struct dosen{
+	char nama[100];
+	int kode;
+}dsn;
+main()
+{
+	int pilih, nomor;
+    char outnama[100];
+	do{
+		system("cls");
+		printf("Mahasiswa atau dosen? [1/2] : "); scanf("%d",&pilih);
+		if(pilih<1 || pilih>2){
+			printf("Masukkan input yang sesuai.");
+		}
+	}while(pilih<1 || pilih>2);
+	
+	if(pilih==1){
+		printf("Nama Mahasiswa : "); scanf("%s",&mhs.nama);
+		printf("NIM Mahasiswa  : "); scanf("%d",&mhs.nim);
+	}else{
+		printf("Nama Dosen        : "); scanf("%s",&dsn.nama);
+		printf("Kode Mata Kuliah  : "); scanf("%d",&dsn.kode);
+	}
+
+    printf("\nData");
+    switch (pilih)
+    {
+    case 1 : printf("\nNama : %s",mhs.nama); printf("\nNim/kode : %d",mhs.nim); break;
+    default: printf("\nNama : %s",dsn.nama); printf("\nNim/kode : %d",dsn.kode); break;
+    }
+	
+	getch();
+	return 0;
+}
