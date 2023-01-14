@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+//deklarasi fungsi
+int fjumlah(int a, int b);
+int fkurang(int a, int b);
+int fkali(int a, int b);
+float fbagi(int a, int b);
+int pilih, bil1, bil2; //variabel global
+main()
+{
+    do{
+        system("cls");
+        printf("1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian");
+        printf("\nProses yang akan dijalankan [1-4] : "); scanf("%d",&pilih);
+        if(pilih<1 || pilih>4){
+            printf("Masukkan input yang sesuai."); getch();
+        }
+    }while(pilih<1 || pilih>4);
+	
+	printf("Masukkan bilangan pertama : "); scanf("%d",&bil1);
+	printf("Masukkan bilangan kedua   : "); scanf("%d",&bil2);
+    if(pilih==1){
+        printf("%d + %d = %d",bil1,bil2,fjumlah(bil1,bil2));
+    }else if(pilih==2){
+        printf("%d - %d = %d",bil1,bil2,fkurang(bil1,bil2));
+    }else if(pilih==3){
+        printf("%d x %d = %d",bil1,bil2,fkali(bil1,bil2));
+    }else{
+        printf("%d / %d = %.2f",bil1,bil2,fbagi(bil1,bil2));
+    }
+    getch();
+    return 0;
+}
+
+//definisi fungsi
+int fjumlah(int a, int b){
+	int hasil;
+	hasil = a+b;
+	return(hasil);
+}
+int fkurang(int a, int b){
+	return(a-b);
+}
+int fkali(int a, int b){
+	return(a*b);
+}
+float fbagi(int a, int b){
+	return((float)a/b);
+}
