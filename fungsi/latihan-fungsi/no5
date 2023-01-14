@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+//deklarasi fungsi
+void fungsi1(void);
+void fungsi2(void);
+void fungsi3(void);
+int pilih; //variabel global
+main()
+{
+	do{
+		system("cls");
+		printf("Jenis           Harga Sewa/Hari");
+		printf("\n1. City Car     Rp.300.000,00");
+		printf("\n2. MPV          Rp.400.000,00");
+		printf("\n3. SUV          Rp.500.000,00");
+		printf("\nPilih Mobil [1,2,3]: "); scanf("%d",&pilih);
+		if(pilih<1 || pilih>3){
+			printf("Masukkan input yang sesuai.");
+		}
+	}while(pilih<1 || pilih>3);
+	
+	if(pilih==1){
+		fungsi1(); //pemanggilan fungsi
+	}else if(pilih==2){
+		fungsi2(); //pemanggilan fungsi
+	}else{
+		fungsi3(); //pemanggilan fungsi
+	}
+	getch();
+	return 0;
+}
+
+//definisi fungsi
+void fungsi1(void){
+	printf("Uang yang harus dibayar adalah Rp.300.000,00");
+}
+void fungsi2(void){
+	printf("Uang yang harus dibayar adalah Rp.400.000,00");
+}
+void fungsi3(void){
+	printf("Uang yang harus dibayar adalah Rp.500.000,00");
+}
