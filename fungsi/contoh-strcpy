@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct data_kelahiran{
+	int tgl, tahun;
+	char bulan[30];
+};
+
+struct karyawan
+{
+	char nama[20], alamat[30];
+	data_kelahiran tanggal;
+}data_karyawan;
+
+main()
+{
+	system("cls");
+	printf("%s ",strcpy(data_karyawan.nama,"Putri"));
+	printf("%d ",data_karyawan.tanggal.tgl=26);
+	printf("%s ",strcpy(data_karyawan.tanggal.bulan,"Mei"));
+	printf("%d ",data_karyawan.tanggal.tahun=1999);
+		
+	getch();
+	return 0;
+}
