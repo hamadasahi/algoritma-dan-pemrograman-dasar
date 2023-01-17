@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+main()
+{
+	int banyak, i, bil[10], ganjil, genap;
+	system("cls");
+	printf("Banyak bilangan [maks 10] : "); scanf("%d",&banyak);
+	
+	//input
+	for(i=0; i<banyak; i++){
+		printf("Bilangan ke-%d : ",i+1); scanf("%d",&bil[i]);
+	}
+	//tampil genap
+	printf("\n\nBilangan genapnya adalah ");
+	for(i=0; i<banyak; i++){
+		if(bil[i]%2==0){
+			printf("%d ",bil[i]);
+			genap += bil[i];
+		}
+	}
+	//tampil ganjil
+	printf("\nBilangan ganjilnya adalah ");
+	for(i=0; i<banyak; i++){
+		if(bil[i]%2==1){
+			printf("%d ",bil[i]);
+			ganjil += bil[i];
+		}
+	}
+	
+	printf("\nJumlah bilangan genapnya adalah %d.",genap);
+	printf("\nJumlah bilangan ganjilnya adalah %d.",ganjil-1);
+	
+	getch();
+	return 0;
+}
