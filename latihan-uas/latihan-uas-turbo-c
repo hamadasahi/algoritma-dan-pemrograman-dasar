@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+
+//deklarasi variabel
+int i;
+
+//struct
+struct data_input{
+     int hari, tipe;
+     float harga;
+}data;
+struct data_proses{
+     char tsopir;
+     int jambil, jkembali, lama;
+     float bsopir, bmakan, overtime, total, semua;
+}proses;
+
+//deklarasi fungsi
+void harga(void);
+float total(void);
+void rincian(void);
+
+main()
+{
+     clrscr();
+     printf("Rental Motor \"SISFO\"\n");
+     printf("Tipe Mobil   Harga per 12 jam\n");
+     printf("1. Minibus   Rp.350.000,00\n");
+     printf("2. Sedan     Rp.400.000,00\n");
+     printf("3. MPV       Rp.450.000,00\n");
+     printf("4. SUV       Rp.550.000,00\n\n");
+
+     do{
+	  printf("Tipe Mobil : "); scanf("%d",&data.tipe);
+	  if(data.tipe>4 || data.tipe<1){
+	       printf("Masukan nomor  tipe mobil yang sesuai.\n");
+	  }
+     }while(data.tipe>4 || data.tipe<1);
+     harga(); //panggil fungsi
+
+     printf("Jumlah hari sewa mobil : "); scanf("%d",&data.hari);
+     for(i=0; i<data.hari; i++)
+     {
+	  printf("\nDATA HARI KE-%d\n",i+1);
+	  do{
+	       printf("Gunakan jasa sopir [Y/T] : "); scanf("%s",&proses.tsopir);
+	  }while(tolower(proses.tsopir)!='y' && tolower(proses.tsopir)!='t');
+
+	  do{
+	       printf("Jam ambil : "); scanf("%d",&proses.jambil);
+	       printf("Jam kembali : "); scanf("%d",&proses.jkembali);
+	  }while(proses.jambil<1 || proses.jambil>24 || proses.jkembali<1 || proses.jkembali>25);
+
+	  proses.lama = proses.jkembali - proses.jambil;
+
+	  if(tolower(proses.tsopir)=='y'){
+	       proses.bsopir = 150000;
+	       if(proses.lama>12){
+		    proses.bmakan = 70000;
+		    proses.overtime = (proses.lama-12)*data.harga*10/100;
+	       }else{
+		    proses.bmakan = 50000;
+	       }
+	  }else{
+	       proses.bsopir = 0;
+	       if(proses.lama>12){
+		    proses.bmakan = 0;
+		    proses.overtime = (proses.lama-12)*data.harga*10/100;
+	       }else{
+		    proses.bmakan = 0;
+	       }
+	  }
+
+	  rincian(); //panggil fungsi
+	  proses.semua += total(); //panggil fungsi
+     }
+
+     printf("\n===============================================\n");
+     printf("TOTAL KESELURUHAN %d HARI SEWA = %.0f\n",data.hari,proses.semua);
+
+     getch();
+     return 0;
+}
+
+//deklarasi fungsi
+void harga(void){
+     switch(data.tipe){
+	  case 1 : data.harga = 350000; break;
+	  case 2 : data.harga = 400000; break;
+	  case 3 : data.harga = 450000; break;
+	  case 4 : data.harga = 550000; break;
+     }
+}
+
+float total(void){
+     return(data.harga + proses.bsopir + proses.bmakan + proses.overtime);
+}
+
+void rincian(void){
+     printf("Detail hari ke-%d\n",i+1);
+     printf("Harga sewa             : %.f\n",data.harga);
+     printf("Biaya makan sopir      : %.f\n",proses.bmakan);
+     printf("Biaya jasa sopir       : %.f\n",proses.bsopir);
+     printf("Biaya denda overtime   : %.f\n",proses.overtime);
+     printf("Total biaya hari ke-%d : %.0f\n",i+1,total());
+}
