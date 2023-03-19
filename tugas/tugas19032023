@@ -1,0 +1,44 @@
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+	char id_pelanggan[7][4], status_member[7], nama_pelanggan[7][10], nama[10];
+	int i,bukan_member=0;
+	
+	system("cls");
+	
+	for(i=0; i<7; i++){
+		printf("%d. ",i+1);
+		printf("Id pelanggan : "); scanf("%s",&id_pelanggan[i]);
+		printf("status member : "); scanf("%s",&status_member[i]);
+		printf("nama pelanggan : "); scanf("%s",&nama_pelanggan[i]);
+		printf("\n");
+	}
+	
+	
+	printf("\nMasukkan nama pelanggan : "); scanf("%s",&nama);
+	for(i=0; i<7; i++){
+		if(nama == nama_pelanggan[i]){
+			if(status_member[i]=='t'){
+				printf("Pelanggan dengan nama %s bukan member toko buku Cahaya Ilmu",nama);
+			}else{
+				printf("Pelanggan dengan nama %s adalah member toko buku Cahaya Ilmu",nama);
+			}
+		}
+	}
+	
+	printf("\nDaftar pelanggan yang bukan member\n");
+	
+	for(i=0; i<7; i++){
+		if(status_member[i]=='t'){
+			printf("%s\n",nama_pelanggan[i]);	
+			bukan_member++;
+		}
+	}
+	
+	printf("\nJumlah pelanggan bukan member = %d",bukan_member);
+	
+	getch();
+	return 0;
+}
